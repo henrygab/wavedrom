@@ -10,3 +10,8 @@ wavedrom.unpkg.js
 wavedrom.unpkg.min.js
 *.d.ts
 *.d.ts.map
+
+# Temporarily adding files here as they are converted to TypeScript
+/lib/render-signal.js
+/lib/render-signal.js.map
+
