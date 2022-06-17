@@ -1,0 +1,39 @@
+{
+    // "$schema": "https://json.schemastore.org/tsconfig",
+    // "display": "Node 16.11+ / IOS15+ / FF102+ / etc.",
+
+    "compilerOptions": {
+        //"target":"ES5",
+        "module": "CommonJS",
+        // "outDir": "out",
+        // "rootDir": "lib",
+        "sourceMap": true,
+        "jsx" : "react",
+        // "moduleResolution": "Node",
+        "alwaysStrict": true,
+        "allowJs": true,
+        //"noImplicitAny":                true,  // forces things to be typed
+
+        "strict": true, // enables wide range of type-checking behavior
+        //"strictBindCallApply":          true,  // already enabled with "strict":true
+        //"strictFunctionTypes":          true,  // already enabled with "strict":true
+        //"strictNullChecks":             true,  // already enabled with "strict":true
+        //"strictPropertyInitialization": true,  // already enabled with "strict":true
+
+        // "esModuleInterop": true,
+        // "skipLibCheck": true,
+        // "declaration": true, // generate .d.ts files
+        // "declarationMap": true, // map .d.ts declarations back to source
+        // "forceConsistentCasingInFileNames": true,
+
+        // Do not set the following three, for consistency with Node.js module resolution
+        // "baseUrl": "",
+        // "paths": {},
+        // "rootDirs": [],
+    },
+
+    "exclude": [
+        "node_modules"
+    ]
+
+}
