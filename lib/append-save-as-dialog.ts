@@ -144,7 +144,7 @@ function justPreventDefault(evt: MouseEvent) : void {
     evt.preventDefault();
 }
 // function closeMenu(_evt: MouseEvent) : void {
-function closeMenu() : void {
+function closeMenu(evt: MouseEvent) : void {
     // when the mouse event is NOT within the bounds of the menu, then remove the menu
     // and remove this event handler from the global document.
     assert_for_review(state !== null);
