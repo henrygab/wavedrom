@@ -33,3 +33,15 @@ export function assert_unreachable(
 {
     throw new Error("Statement should be unreachable");
 }
+
+export function warn_unless(
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    condition: any,
+    /* eslint-enable  @typescript-eslint/no-explicit-any */
+    msg: string
+    )
+{
+    if (!condition) {
+        console.log( "WARNING: " + msg );
+    }
+}
