@@ -27,7 +27,7 @@
   "scripts": {
     "tsc:w": "tsc -w",
     "test": "npm-run-all eslint nyc",
-    "eslint": "eslint lib/*.ts",
+    "eslint": "npx eslint .",
     "nyc": "nyc -r=lcov -r=text mocha test",
     "dist": "browserify ./lib/wave-drom.js > wavedrom.js",
     "watch.dist": "watchify ./lib/wave-drom.js -o wavedrom.js -v",
@@ -47,6 +47,8 @@
   ],
   "devDependencies": {
     "@drom/eslint-config": "^0.10.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
     "browserify": "^17.0.0",
     "chai": "^4.3",
     "coveralls": "^3.1.1",
