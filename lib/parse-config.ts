@@ -1,9 +1,39 @@
 
-function parseConfig (source, lane) {
-    var hscale;
+// These types were automatically inferred by TypeScript
+type ParseConfigSource = {
+    config: {
+        hscale: any;             // TODO: consider defining the alternatives?
+        hbounds: string | any[]; // TODO: consider making a more specific type for this?  maybe `number[2]`?
+    };
+    head: {
+        tick: number;
+        tock: number;
+        text: any;    // TODO: Discover why this would not be 'string'
+    };
+    foot: {
+        tick: number;
+        tock: number;
+        text: any;    // TODO: Discover why this would not be 'string'
+    };
+ };
+ type ParseConfigLane = {
+    hscale: number;
+    hscale0: any;           // TODO: consider if this can be made more specific?
+    yh0: number;
+    yh1: number;
+    head: { text: any; };   // TODO: consider why this would not be 'string'
+    xmin_cfg: number;
+    xmax_cfg: number;
+    yf0: number;
+    yf1: number;
+    foot: { text: any; };   // TODO: consider why this would not be 'string'
+};
+
+
+function parseConfig (source : ParseConfigSource, lane : ParseConfigLane) {
 
     function tonumber (x) {
-        return x > 0 ? Math.round(x) : 1;
+        return x > 0 ? Math.round(x) : 1; // BUGBUG -- If the value is < 0.5, this will round DOWN, resulting in ZERO(!)
     }
 
     lane.hscale = 1;
@@ -12,7 +42,7 @@ function parseConfig (source, lane) {
         lane.hscale = lane.hscale0;
     }
     if (source && source.config && source.config.hscale) {
-        hscale = Math.round(tonumber(source.config.hscale));
+        let hscale = Math.round(tonumber(source.config.hscale));
         if (hscale > 0) {
             if (hscale > 100) {
                 hscale = 100;
@@ -43,7 +73,7 @@ function parseConfig (source, lane) {
             source.head.tick || source.head.tick === 0 ||
             source.head.tock || source.head.tock === 0
         ) {
-            lane.yh0 = 20;
+            lane.yh0 = 20; // BUGBUG -- What is this magic number?
         }
         // if tick defined, modify start tick by lane.xmin_cfg
         if ( source.head.tick || source.head.tick === 0 ) {
@@ -55,7 +85,7 @@ function parseConfig (source, lane) {
         }
 
         if (source.head.text) {
-            lane.yh1 = 46;
+            lane.yh1 = 46;  // BUGBUG -- What is this magic number?
             lane.head.text = source.head.text;
         }
     }
@@ -68,7 +98,7 @@ function parseConfig (source, lane) {
             source.foot.tick || source.foot.tick === 0 ||
             source.foot.tock || source.foot.tock === 0
         ) {
-            lane.yf0 = 20;
+            lane.yf0 = 20; // BUGBUG -- What is this magic number?
         }
         // if tick defined, modify start tick by lane.xmin_cfg
         if ( source.foot.tick || source.foot.tick === 0 ) {
@@ -80,7 +110,7 @@ function parseConfig (source, lane) {
         }
 
         if (source.foot.text) {
-            lane.yf1 = 46;
+            lane.yf1 = 46; // BUGBUG -- What is this magic number?
             lane.foot.text = source.foot.text;
         }
     }
