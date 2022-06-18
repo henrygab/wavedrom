@@ -30,7 +30,6 @@ module.exports = {
     },
     { // BUGBUG -- list of .ts files that have NOT been fully converted to typescript:
       files: [
-        'append-save-as-dialog.ts',
         'arc-shape.ts',
         'arcs.new.ts',
         'arcs.ts',
@@ -44,7 +43,6 @@ module.exports = {
         'gen-wave-brick.ts',
         'index.ts',
         'insert-svg-template.ts',
-        'lane.ts',
         'parse-config.ts',
         'parse-wave-lane.ts',
         'parse-wave-lanes.ts',
@@ -83,6 +81,8 @@ module.exports = {
     },
     { // BUGBUG -- list of files that are in process of being converted to typescript:
       files: [
+        'lane.ts',
+        'append-save-as-dialog.ts',
         'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts'
       ],
       rules: {
