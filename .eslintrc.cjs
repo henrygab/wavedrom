@@ -11,6 +11,13 @@ module.exports = {
   ],
   overrides: [
     {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        'no-undef': 'off',
+      },
+    },
+    {
       files: ['*.ts', '*.mts', '*.cts', '*.tsx'],
       rules: {
         'no-undef': 'off',
