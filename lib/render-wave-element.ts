@@ -1,6 +1,6 @@
 
-var renderAny = require('./render-any.js');
-var createElement = require('./create-element.js');
+import renderAny = require('./render-any.js');
+import createElement = require('./create-element.js');
 
 function renderWaveElement (index, source, outputElement, waveSkin, notFirstSignal) {
 

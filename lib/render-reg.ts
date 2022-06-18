@@ -1,5 +1,5 @@
 
-var render = require('bit-field/lib/render.js');
+import render = require('bit-field/lib/render.js');
 
 function renderReg (index, source) {
     return render(source.reg, source.config);

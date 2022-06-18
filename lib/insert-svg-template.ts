@@ -1,5 +1,5 @@
 
-var w3 = require('./w3.js');
+import w3 = require('./w3.js');
 
 function insertSVGTemplate (index, source, lane, waveSkin, content, lanes, groups, notFirstSignal) {
     var first, skin, e;

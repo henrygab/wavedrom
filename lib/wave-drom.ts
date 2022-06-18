@@ -1,15 +1,23 @@
-window.WaveDrom = window.WaveDrom || {};
-
-var pkg = require('../package.json');
-var processAll = require('./process-all.js');
-var eva = require('./eva.js');
-var renderWaveForm = require('./render-wave-form.js');
-var editorRefresh = require('./editor-refresh.js');
-
-window.WaveDrom.ProcessAll = processAll;
-window.WaveDrom.RenderWaveForm = renderWaveForm;
-window.WaveDrom.EditorRefresh = editorRefresh;
-window.WaveDrom.eva = eva;
-window.WaveDrom.version = pkg.version;
 
 /* eslint-env browser */
+
+interface IWaveDromWindow extends Window {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    WaveDrom?: any;
+    /* eslint-enable  @typescript-eslint/no-explicit-any */
+}
+const waveDromWindow = window as Window as IWaveDromWindow;
+
+
+import pkg = require('../package.json');
+import processAll = require('./process-all.ts');
+import eva = require('./eva.js');
+import renderWaveForm = require('./render-wave-form.js');
+import editorRefresh = require('./editor-refresh.js');
+
+waveDromWindow.WaveDrom.ProcessAll = processAll;
+waveDromWindow.WaveDrom.RenderWaveForm = renderWaveForm;
+waveDromWindow.WaveDrom.EditorRefresh = editorRefresh;
+waveDromWindow.WaveDrom.eva = eva;
+waveDromWindow.WaveDrom.version = pkg.version;
+

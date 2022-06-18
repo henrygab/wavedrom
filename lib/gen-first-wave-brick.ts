@@ -1,5 +1,5 @@
 
-var genBrick = require('./gen-brick.js');
+import genBrick = require('./gen-brick.js');
 
 function genFirstWaveBrick (text, extra, times) {
     var tmp;

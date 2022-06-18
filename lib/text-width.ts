@@ -1,4 +1,4 @@
-var charWidth = require('./char-width.json');
+import charWidth = require('./char-width.json');
 
 /**
     Calculates text string width in pixels.

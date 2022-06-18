@@ -1,8 +1,8 @@
 
-var renderMarks = require('./render-marks.js');
-var renderArcs = require('./render-arcs.js');
-var renderGaps = require('./render-gaps.js');
-var renderPieceWise = require('./render-piece-wise.js');
+import renderMarks = require('./render-marks.js');
+import renderArcs = require('./render-arcs.js');
+import renderGaps = require('./render-gaps.js');
+import renderPieceWise = require('./render-piece-wise.js');
 
 function renderLanes (index, content, waveLanes, ret, source, lane) {
     return [renderMarks(content, index, lane, source)].concat(waveLanes.res, [

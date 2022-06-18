@@ -1,7 +1,7 @@
 
-var eva = require('./eva.js');
-var appendSaveAsDialog = require('./append-save-as-dialog.js');
-var renderWaveForm = require('./render-wave-form.js');
+import eva = require('./eva.js');
+import appendSaveAsDialog = require('./append-save-as-dialog.js');
+import renderWaveForm = require('./render-wave-form.js');
 
 function processAll () {
     var points,

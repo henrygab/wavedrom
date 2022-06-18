@@ -1,6 +1,6 @@
 
-var eva = require('./eva.js');
-var renderWaveForm = require('./render-wave-form.js');
+import eva = require('./eva.js');
+import renderWaveForm = require('./render-wave-form.js');
 
 function editorRefresh () {
     // var svg,

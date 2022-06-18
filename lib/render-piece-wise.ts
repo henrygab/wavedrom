@@ -1,5 +1,5 @@
 
-const onml = require('onml');
+import onml = require('onml');
 
 const scaled = (d, sx, sy) => {
     if (sy === undefined) { sy = sx; }

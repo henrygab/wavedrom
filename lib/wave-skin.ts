@@ -1,3 +1,3 @@
-var def = require('../skins/default.js');
+import def = require('../skins/default.js');
 
 module.exports = def; // window.WaveSkin;

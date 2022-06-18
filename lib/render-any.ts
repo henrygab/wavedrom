@@ -1,7 +1,7 @@
 
-var renderAssign = require('logidrom/lib/render-assign.js');
-var renderReg = require('./render-reg.js');
-var renderSignal = require('./render-signal.js');
+import renderAssign = require('logidrom/lib/render-assign.js');
+import renderReg = require('./render-reg.js');
+import renderSignal = require('./render-signal.js');
 
 function renderAny (index, source, waveSkin, notFirstSignal) {
     var res = source.signal ?

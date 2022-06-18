@@ -1,5 +1,5 @@
 
-var renderWaveElement = require('./render-wave-element.js');
+import renderWaveElement = require('./render-wave-element.js');
 
 function renderWaveForm (index, source, output, notFirstSignal) {
     renderWaveElement(index, source, document.getElementById(output + index), window.WaveSkin, notFirstSignal);
