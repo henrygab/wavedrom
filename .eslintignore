@@ -11,6 +11,9 @@ wavedrom.unpkg.min.js
 *.d.ts
 *.d.ts.map
 
+/skins/*
+/test/*
+
 /lib/append-save-as-dialog.js
 /lib/append-save-as-dialog.js.map
 /lib/arc-shape.js
@@ -19,6 +22,8 @@ wavedrom.unpkg.min.js
 /lib/arcs.js.map
 /lib/arcs.new.js
 /lib/arcs.new.js.map
+/lib/assert.js
+/lib/assert.js.map
 /lib/create-element.js
 /lib/create-element.js.map
 /lib/editor-refresh.js
