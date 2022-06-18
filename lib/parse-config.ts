@@ -1,9 +1,11 @@
+import { warn_unless } from './assert';
+type ArrayOfExactlyTwo<T> = [T, T]
 
 // These types were automatically inferred by TypeScript
 type ParseConfigSource = {
     config: {
         hscale: any;             // TODO: consider defining the alternatives?
-        hbounds: string | any[]; // TODO: consider making a more specific type for this?  maybe `number[2]`?
+        hbounds: ArrayOfExactlyTwo<number>;
     };
     head: {
         tick: number;
@@ -30,9 +32,9 @@ type ParseConfigSource = {
 };
 
 
-function parseConfig (source : ParseConfigSource, lane : ParseConfigLane) {
+function parseConfig (source: ParseConfigSource, lane: ParseConfigLane ) {
 
-    function tonumber (x) {
+    function toNonNegativeInteger(x : number) {
         return x > 0 ? Math.round(x) : 1; // BUGBUG -- If the value is < 0.5, this will round DOWN, resulting in ZERO(!)
     }
 
@@ -42,7 +44,7 @@ function parseConfig (source : ParseConfigSource, lane : ParseConfigLane) {
         lane.hscale = lane.hscale0;
     }
     if (source && source.config && source.config.hscale) {
-        let hscale = Math.round(tonumber(source.config.hscale));
+        let hscale = toNonNegativeInteger(source.config.hscale);
         if (hscale > 0) {
             if (hscale > 100) {
                 hscale = 100;
@@ -56,15 +58,17 @@ function parseConfig (source : ParseConfigSource, lane : ParseConfigLane) {
 
     lane.xmin_cfg = 0;
     lane.xmax_cfg = 1e12; // essentially infinity
-    if (source && source.config && source.config.hbounds && source.config.hbounds.length==2) {
-        source.config.hbounds[0] = Math.floor(source.config.hbounds[0]);
-        source.config.hbounds[1] = Math.ceil(source.config.hbounds[1]);
-        if (  source.config.hbounds[0] < source.config.hbounds[1] ) {
+    const hBoundArray = source?.config?.hbounds as ArrayOfExactlyTwo<number>;
+    if (hBoundArray != null) { // both undefined and null
+        hBoundArray[0] = Math.floor(hBoundArray[0]);
+        hBoundArray[1] = Math.ceil(hBoundArray[1]);
+        warn_unless(hBoundArray[0] < hBoundArray[1], "WARNING: parseConfig: source.config.hbounds order reversed");
+        if (hBoundArray[0] < hBoundArray[1] ) {
             // convert hbounds ticks min, max to bricks min, max
             // TODO: do we want to base this on ticks or tocks in
             //  head or foot?  All 4 can be different... or just 0 reference?
-            lane.xmin_cfg = 2 * Math.floor(source.config.hbounds[0]);
-            lane.xmax_cfg = 2 * Math.floor(source.config.hbounds[1]);
+            lane.xmin_cfg = 2 * Math.floor(hBoundArray[0]);
+            lane.xmax_cfg = 2 * Math.floor(hBoundArray[1]);
         }
     }
 
