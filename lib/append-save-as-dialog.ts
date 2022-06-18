@@ -21,13 +21,13 @@ class SaveAsDialogEventHandler implements EventListenerObject{
     private static handlers : SaveAsDialogEventHandler[] = [];
 
     public static Attach(index: number, output:string) {
-        const elementId : string = output + index;
-        const div = document.getElementById(elementId);
-        assert_for_review(div !== null, "Unable to find element " + elementId);
+        const elementId : string = output + index.toString();
+        const presumedDiv = document.getElementById(elementId);
+        assert_for_review(presumedDiv !== null, "Unable to find element " + elementId);
 
         const tmp = new SaveAsDialogEventHandler(index, output);
         this.handlers.push(tmp);
-        div.childNodes[0].addEventListener('contextmenu', tmp, false);
+        presumedDiv.childNodes[0].addEventListener('contextmenu', tmp, false);
     }
 
     handleEvent(evt: Event): void {
@@ -59,14 +59,14 @@ class SaveAsDialog {
     readonly top : number;
 
     public constructor(index : number, output : string, x : number, y : number) {
-        const elementId = output + index;
+        const elementId = output + index.toString();
         const presumedDiv = document.getElementById(elementId);
         assert_for_review(presumedDiv !== null);
     
         const menu = document.createElement('div');
         menu.className = 'wavedromMenu';
-        menu.style.top = '' + y + 'px';
-        menu.style.left = '' + x + 'px';
+        menu.style.top = y.toString() + 'px';
+        menu.style.left = x.toString() + 'px';
 
         const list = document.createElement('ul');
         const savePng = document.createElement('li');
@@ -122,7 +122,7 @@ class SaveAsDialog {
             // This ensures all data from MAGIC_NUMBER_166 through the start
             // of '<g id="waves_0">' is included in the SVG data, which ensures
             // the SVG data is fully self-contained.
-            const firstDiv = document.getElementById(this.output + 0);
+            const firstDiv = document.getElementById(this.output + '0');
             assert_for_review(firstDiv !== null);
             html += firstDiv.innerHTML.substring(SaveAsDialog.MAGIC_NUMBER_166, firstDiv.innerHTML.indexOf('<g id="waves_0">'));
         }
@@ -202,5 +202,7 @@ function appendSaveAsDialog (index: number, output: string) {
     SaveAsDialogEventHandler.Attach(index, output);
 }
 
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 module.exports = appendSaveAsDialog;
+/* eslint-enable  @typescript-eslint/no-unsafe-member-access */
 
