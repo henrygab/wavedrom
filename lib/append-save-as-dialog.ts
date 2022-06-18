@@ -1,4 +1,3 @@
-'use strict';
 
 function appendSaveAsDialog (index, output) {
     var div;

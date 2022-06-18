@@ -1,5 +1,3 @@
-'use strict';
-
 window.WaveDrom = window.WaveDrom || {};
 
 var pkg = require('../package.json');
