@@ -21,6 +21,7 @@ module.exports = {
       files: ['*.ts', '*.mts', '*.cts', '*.tsx'],
       rules: {
         'no-undef': 'off',
+        'no-var': 'off', // BUGBUG -- temporarily allow this while converting to TypeScript
       },
     },
   ],
