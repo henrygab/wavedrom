@@ -1,5 +1,16 @@
 
-function arcShape (Edge, from, to) { /* eslint complexity: [warn, 30] */
+type arcShapeResult = {
+    lx    : number;
+    ly    : number;
+    d     : string | undefined; // can this be more specific?
+    style : string | undefined;
+};
+
+
+
+
+
+function arcShape (Edge, from, to) : arcShapeResult { /* eslint complexity: [warn, 30] */
     var dx = to.x - from.x;
     var dy = to.y - from.y;
     var lx = ((from.x + to.x) / 2);
