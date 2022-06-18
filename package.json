@@ -27,7 +27,7 @@
   "scripts": {
     "tsc:w": "tsc -w",
     "test": "npm-run-all eslint nyc",
-    "eslint": "eslint lib/*.js",
+    "eslint": "eslint lib/*.ts",
     "nyc": "nyc -r=lcov -r=text mocha test",
     "dist": "browserify ./lib/wave-drom.js > wavedrom.js",
     "watch.dist": "watchify ./lib/wave-drom.js -o wavedrom.js -v",
