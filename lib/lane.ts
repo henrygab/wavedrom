@@ -1,5 +1,5 @@
 
-var lane = {
+const lane = {
     xs     : 20,    // tmpgraphlane0.width
     ys     : 20,    // tmpgraphlane0.height
     xg     : 120,   // tmpgraphlane0.x
@@ -19,4 +19,6 @@ var lane = {
     foot   : {}
 };
 
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 module.exports = lane;
+/* eslint-enable  @typescript-eslint/no-unsafe-member-access */
