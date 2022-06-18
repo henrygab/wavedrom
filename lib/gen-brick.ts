@@ -1,4 +1,3 @@
-'use strict';
 
 function genBrick (texts, extra, times) {
     var i, j, R = [];

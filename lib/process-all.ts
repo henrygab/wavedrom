@@ -1,4 +1,3 @@
-'use strict';
 
 var eva = require('./eva.js');
 var appendSaveAsDialog = require('./append-save-as-dialog.js');

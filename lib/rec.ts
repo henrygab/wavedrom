@@ -1,4 +1,3 @@
-'use strict';
 
 function rec (tmp, state) {
     var i, name, old = {}, delta = {'x':10};

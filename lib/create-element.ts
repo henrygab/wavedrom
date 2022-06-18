@@ -1,4 +1,3 @@
-'use strict';
 
 var onmlStringify = require('onml/stringify.js');
 var w3 = require('./w3.js');

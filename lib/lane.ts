@@ -1,4 +1,3 @@
-'use strict';
 
 var lane = {
     xs     : 20,    // tmpgraphlane0.width

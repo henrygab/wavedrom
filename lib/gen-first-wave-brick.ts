@@ -1,4 +1,3 @@
-'use strict';
 
 var genBrick = require('./gen-brick.js');
 

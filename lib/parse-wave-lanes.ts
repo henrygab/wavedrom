@@ -1,4 +1,3 @@
-'use strict';
 
 var parseWaveLane = require('./parse-wave-lane.js');
 

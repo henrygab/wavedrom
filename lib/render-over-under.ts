@@ -1,4 +1,3 @@
-'use strict';
 
 var colors = {
     1: '#000000',

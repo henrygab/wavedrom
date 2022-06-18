@@ -1,4 +1,3 @@
-'use strict';
 
 var w3 = require('./w3.js');
 

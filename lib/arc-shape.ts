@@ -1,4 +1,3 @@
-'use strict';
 
 function arcShape (Edge, from, to) { /* eslint complexity: [warn, 30] */
     var dx = to.x - from.x;

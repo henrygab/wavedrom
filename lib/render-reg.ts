@@ -1,4 +1,3 @@
-'use strict';
 
 var render = require('bit-field/lib/render.js');
 

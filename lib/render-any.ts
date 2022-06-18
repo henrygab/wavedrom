@@ -1,4 +1,3 @@
-'use strict';
 
 var renderAssign = require('logidrom/lib/render-assign.js');
 var renderReg = require('./render-reg.js');

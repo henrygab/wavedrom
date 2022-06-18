@@ -1,4 +1,3 @@
-'use strict';
 
 var rec = require('./rec.js');
 var lane = require('./lane.js');

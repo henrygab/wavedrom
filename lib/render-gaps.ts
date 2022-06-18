@@ -1,4 +1,3 @@
-'use strict';
 
 function renderGapUses (text, lane) {
     var res = [];

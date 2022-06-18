@@ -1,4 +1,3 @@
-'use strict';
 
 function parseConfig (source, lane) {
     var hscale;

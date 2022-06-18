@@ -1,5 +1,3 @@
-'use strict';
-
 var charWidth = require('./char-width.json');
 
 /**
@@ -10,18 +8,17 @@ var charWidth = require('./char-width.json');
     @return {Number} text string width
 */
 
-module.exports = function (str, size) {
-    var i, len, c, w, width;
-    size = size || 11; // default size 11pt
-    len = str.length;
-    width = 0;
-    for (i = 0; i < len; i++) {
-        c = str.charCodeAt(i);
-        w = charWidth.chars[c];
+module.exports = function (str : string, size? : number) : number {
+    const len = str.length;
+    let width = 0;
+    for (let i = 0; i < len; i++) {
+        const c = str.charCodeAt(i);
+        let w = charWidth.chars[c];
         if (w === undefined) {
             w = charWidth.other;
         }
         width += w;
     }
+    size = size || 11; // default size 11pt
     return (width * size) / 100; // normalize
 };

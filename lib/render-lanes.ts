@@ -1,4 +1,3 @@
-'use strict';
 
 var renderMarks = require('./render-marks.js');
 var renderArcs = require('./render-arcs.js');

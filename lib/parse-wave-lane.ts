@@ -1,4 +1,3 @@
-'use strict';
 
 var genFirstWaveBrick = require('./gen-first-wave-brick.js');
 var genWaveBrick = require('./gen-wave-brick.js');

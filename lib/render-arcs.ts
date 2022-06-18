@@ -1,4 +1,3 @@
-'use strict';
 
 var arcShape = require('./arc-shape.js');
 var renderLabel = require('./render-label.js');

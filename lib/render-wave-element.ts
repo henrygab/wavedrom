@@ -1,4 +1,3 @@
-'use strict';
 
 var renderAny = require('./render-any.js');
 var createElement = require('./create-element.js');

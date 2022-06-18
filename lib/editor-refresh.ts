@@ -1,4 +1,3 @@
-'use strict';
 
 var eva = require('./eva.js');
 var renderWaveForm = require('./render-wave-form.js');

@@ -1,4 +1,3 @@
-'use strict';
 
 var tspan = require('tspan');
 var textWidth = require('./text-width.js');

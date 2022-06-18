@@ -1,4 +1,3 @@
-'use strict';
 
 function findLaneMarkers (lanetext) {
     var gcount = 0,

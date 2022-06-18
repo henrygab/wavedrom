@@ -1,4 +1,3 @@
-'use strict';
 
 var pkg = require('../package.json');
 var processAll = require('./process-all.js');

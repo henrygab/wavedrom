@@ -1,4 +1,3 @@
-'use strict';
 
 function eva (id) {
     var TheTextBox, source;

@@ -1,4 +1,3 @@
-'use strict';
 
 var renderWaveElement = require('./render-wave-element.js');
 
