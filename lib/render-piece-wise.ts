@@ -49,7 +49,7 @@ function renderLane (wave, idx, cfg) {
 }
 
 function renderPieceWise (lanes, index, cfg) {
-    let res = ['g'];
+    const res = ['g'];
     lanes.map((row, idx) => {
         const wave = row.wave;
         if (Array.isArray(wave)) {
