@@ -1,7 +1,16 @@
 
 import w3 = require('./w3.js');
 
-function insertSVGTemplate (index, source, lane, waveSkin, content, lanes, groups, notFirstSignal) {
+function insertSVGTemplate (
+    index : number,
+    source,
+    lane,
+    waveSkin,
+    content,
+    lanes,
+    groups,
+    notFirstSignal : boolean
+    ) {
     var first, skin, e;
 
     for (first in waveSkin) { break; }
