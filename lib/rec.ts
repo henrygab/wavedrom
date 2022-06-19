@@ -1,6 +1,9 @@
 
 function rec (tmp, state) {
-    var i, name, old = {}, delta = {'x':10};
+    var i;
+    var name;
+    var old = {};
+    var delta = {'x':10};
     if (typeof tmp[0] === 'string' || typeof tmp[0] === 'number') {
         name = tmp[0];
         delta.x = 25;
