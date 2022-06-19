@@ -78,9 +78,9 @@ module.exports = {
         'gen-brick.ts',
         'find-lane-markers.ts',
         'eva.ts',
-        'arc-shape.ts',
         'arcs.new.ts',
         'arcs.ts',
+        'append-save-as-dialog.ts',
       ],
       rules: {
         'no-undef': 'off',
@@ -96,7 +96,7 @@ module.exports = {
     },
     { // BUGBUG -- list of files that are in process of being converted to typescript:
       files: [
-        'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts'
+        'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts',
       ],
       rules: {
         'no-undef': 'off',
@@ -113,8 +113,8 @@ module.exports = {
     { // BUGBUG -- list of files that are building (mostly) as typescript:
       //           exceptions use of `eslint-disable` comments...
       files: [
+        'arc-shape.ts',
         'lane.ts',
-        'append-save-as-dialog.ts',
       ],
       rules: {
         'no-undef'                                   : 'off',

@@ -51,7 +51,7 @@ function renderArcs (source, index, top, lane) {
 
         var shapeProps, lx, ly;
         if (from && to) {
-            shapeProps = arcShape(Edge, from, to);
+            shapeProps = arcShape(Edge.shape, from, to, Edge.label ?? undefined);
             lx = shapeProps.lx;
             ly = shapeProps.ly;
             res = res.concat([renderArc(Edge, from, to, shapeProps)]);

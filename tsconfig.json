@@ -3,7 +3,6 @@
     // "display": "Node 16.11+ / IOS15+ / FF102+ / etc.",
 
     "compilerOptions": {
-        //"target":"ES5",
         "module": "CommonJS",
         // "outDir": "out",
         // "rootDir": "lib",
