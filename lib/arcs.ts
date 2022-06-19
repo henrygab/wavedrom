@@ -1,12 +1,18 @@
+// THIS APPEARS TO BE DEAD CODE ... see arc-shapes.ts
 
-var arcs,
-    to,
-    from,
-    // lx,
-    dx,
-    dy;
-    // def,
-    // Edge;
+import { SupportedArcShapeStrings, isSupportedArcShape } from './arc-shape';
+import { assert } from './assert';
+
+// Where are dx, dy defined to have value?
+// Is this entire file simply here to define a bunch of closures, keyed by SupportedArcShape string?
+
+var to;
+var from;
+// var lx,
+var dx;
+var dy;
+// var def,
+// var Edge;
 
 dx = to.x - from.x;
 dy = to.y - from.y;
@@ -27,7 +33,7 @@ function dx_dy () {
 //     };
 // };
 
-arcs = {
+export const arcs = {
     // '-': function () { },
     '~' : function () {
         return {
@@ -138,9 +144,22 @@ arcs = {
             style: 'marker-end:url(#arrowhead);marker-start:url(#arrowtail);stroke:#0041c4;stroke-width:1;fill:none',
             d: 'm ' + from_x_y() + ' ' + (dx / 2) + ',0 0,' + dy + ' ' + (dx / 2) + ',0'
         };
-    }
+    },
+    // 'Fail': function () { return {}; }, // uncomment to validate below will ensure it's all the same
 };
 
+
+for ( const chk in (arcs as object) ) {
+    assert( isSupportedArcShape(chk) );
+    assert( SupportedArcShapeStrings.some( (p : string) => p === chk ));
+}
+for ( const chk in SupportedArcShapeStrings ) {
+    assert( Object.keys(arcs).some( (p : string) => p === chk));
+}
+
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 module.exports = {
     arcs: arcs
 };
+/* eslint-enable  @typescript-eslint/no-unsafe-member-access */
+

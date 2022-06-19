@@ -68,6 +68,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-argument'      : 'off',
         '@typescript-eslint/restrict-plus-operands'  : 'off',
         '@typescript-eslint/no-unsafe-return'        : 'off',
+        '@typescript-eslint/no-explicit-any'         : 'off',
       },
     },
     { // BUGBUG -- list of .ts files with NO dependencies; convert these first?
@@ -78,8 +79,8 @@ module.exports = {
         'gen-brick.ts',
         'find-lane-markers.ts',
         'eva.ts',
-        'arcs.new.ts',
-        'arcs.ts',
+        'arcs.new.ts',               // Dead code?
+        'arcs.ts',                   // Dead code?
         'append-save-as-dialog.ts',
       ],
       rules: {
@@ -92,6 +93,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-argument'      : 'off',
         '@typescript-eslint/restrict-plus-operands'  : 'off',
         '@typescript-eslint/no-unsafe-return'        : 'off',
+        '@typescript-eslint/no-explicit-any'         : 'off',
       },
     },
     { // BUGBUG -- list of files that are in process of being converted to typescript:
@@ -108,6 +110,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-argument'      : 'warn',
         '@typescript-eslint/restrict-plus-operands'  : 'warn',
         '@typescript-eslint/no-unsafe-return'        : 'warn',
+        '@typescript-eslint/no-explicit-any'         : 'warn',
       },
     },
     { // BUGBUG -- list of files that are building (mostly) as typescript:
@@ -126,6 +129,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-argument'      : 'warn',
         '@typescript-eslint/restrict-plus-operands'  : 'warn',
         '@typescript-eslint/no-unsafe-return'        : 'warn',
+        '@typescript-eslint/no-explicit-any'         : 'warn',
       },
     },
   ],

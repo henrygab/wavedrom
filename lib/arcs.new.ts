@@ -1,11 +1,12 @@
+// THIS APPEARS TO BE DEAD CODE ... see arc-shapes.ts
 
-var to,
-    from,
-    // lx,
-    dx,
-    dy;
-    // def,
-    // Edge;
+var to;
+var from;
+// var lx,
+var dx,
+var dy;
+// var def,
+// var Edge;
 
 // lx = ((from.x + to.x) / 2);
 // ly = ((from.y + to.y) / 2);
@@ -142,7 +143,7 @@ var arcs = {
     }
 };
 
-function arc (str, ifrom, ito) {
+export function arc (str : string, ifrom, ito) {
     from = ifrom;
     to = ito;
     dx = to.x - from.x;
@@ -151,4 +152,6 @@ function arc (str, ifrom, ito) {
     return target();
 }
 
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 module.exports = arc;
+/* eslint-enable  @typescript-eslint/no-unsafe-member-access */
