@@ -146,10 +146,10 @@ export const arcs = {
         };
     },
     // 'Fail': function () { return {}; }, // uncomment to validate below will ensure it's all the same
-};
+} as const;
 
 
-for ( const chk in (arcs as object) ) {
+for ( const chk in arcs ) {
     assert( isSupportedArcShape(chk) );
     assert( SupportedArcShapeStrings.some( (p : string) => p === chk ));
 }
