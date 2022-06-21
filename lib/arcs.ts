@@ -157,9 +157,8 @@ for ( const chk in SupportedArcShapeStrings ) {
     assert( Object.keys(arcs).some( (p : string) => p === chk));
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = {
     arcs: arcs
 };
-/* eslint-enable  @typescript-eslint/no-unsafe-member-access */
 

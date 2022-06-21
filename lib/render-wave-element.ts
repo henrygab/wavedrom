@@ -14,4 +14,5 @@ function renderWaveElement (index, source, outputElement, waveSkin, notFirstSign
     ), null);
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderWaveElement;

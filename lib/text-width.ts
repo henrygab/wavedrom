@@ -7,7 +7,7 @@ import charWidth = require('./char-width.json');
     @param {Number} size font size used
     @return {Number} text string width
 */
-
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = function (str : string, size? : number) : number {
     const len = str.length;
     let width = 0;

@@ -1,3 +1,4 @@
+/* eslint-env browser */
 
 import onmlStringify = require('onml/stringify.js');
 import w3 = require('./w3.js');
@@ -12,5 +13,5 @@ function createElement (arr) {
     return doc.firstChild;
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = createElement;
-/* eslint-env browser */

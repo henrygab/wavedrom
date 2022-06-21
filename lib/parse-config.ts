@@ -58,7 +58,8 @@ function parseConfig (source: ParseConfigSource, lane: ParseConfigLane ) {
 
     lane.xmin_cfg = 0;
     lane.xmax_cfg = 1e12; // essentially infinity
-    const hBoundArray = source?.config?.hbounds as ArrayOfExactlyTwo<number>;
+
+    const hBoundArray = source?.config?.hbounds;
     if (hBoundArray != null) { // both undefined and null
         hBoundArray[0] = Math.floor(hBoundArray[0]);
         hBoundArray[1] = Math.ceil(hBoundArray[1]);
@@ -72,7 +73,7 @@ function parseConfig (source: ParseConfigSource, lane: ParseConfigLane ) {
         }
     }
 
-    if (source && source.head) {
+    if (source?.head) {
         if (
             source.head.tick || source.head.tick === 0 ||
             source.head.tock || source.head.tock === 0
@@ -97,7 +98,7 @@ function parseConfig (source: ParseConfigSource, lane: ParseConfigLane ) {
     lane.yf0 = 0;
     lane.yf1 = 0;
     lane.foot = source.foot;
-    if (source && source.foot) {
+    if (source?.foot) {
         if (
             source.foot.tick || source.foot.tick === 0 ||
             source.foot.tock || source.foot.tock === 0
@@ -120,4 +121,5 @@ function parseConfig (source: ParseConfigSource, lane: ParseConfigLane ) {
     }
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = parseConfig;

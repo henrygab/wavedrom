@@ -197,7 +197,6 @@ export function eva (id : string) : object {
     return source;
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = eva;
-/* eslint-enable  @typescript-eslint/no-unsafe-member-access */
 

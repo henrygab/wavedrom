@@ -152,6 +152,5 @@ export function arc (str : string, ifrom, ito) {
     return target();
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = arc;
-/* eslint-enable  @typescript-eslint/no-unsafe-member-access */

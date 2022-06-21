@@ -22,4 +22,5 @@ function renderLabel (p, text) {
     ];
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderLabel;
