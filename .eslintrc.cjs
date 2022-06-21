@@ -78,7 +78,6 @@ module.exports = {
         'parse-config.ts',
         'gen-brick.ts',
         'find-lane-markers.ts',
-        'eva.ts',                    // Security risk via use of 'eval'?
         'arcs.new.ts',               // Dead code?
         'arcs.ts',                   // Dead code?
         'append-save-as-dialog.ts',
@@ -98,6 +97,7 @@ module.exports = {
     },
     { // BUGBUG -- list of files that are in process of being converted to typescript:
       files: [
+        'eva.ts',                    // Security risk via use of 'eval'?
         'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts',
       ],
       rules: {
