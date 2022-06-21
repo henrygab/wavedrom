@@ -10,7 +10,7 @@ const waveDromWindow = window as Window as IWaveDromWindow;
 
 
 import pkg = require('../package.json');
-import processAll = require('./process-all.ts');
+import processAll = require('./process-all.js');
 import eva = require('./eva.js');
 import renderWaveForm = require('./render-wave-form.js');
 import editorRefresh = require('./editor-refresh.js');
