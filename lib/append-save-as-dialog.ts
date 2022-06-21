@@ -4,7 +4,6 @@ import { assert, assert_for_review } from "./assert";
 /* eslint-env browser */
 
 // there can be only a single "Save As" dialog showing at one time.
-let state : SaveAsDialog | null = null;
 
 // `appendSaveAsDialog(index, output)` simply adds an event listener
 // for `contextmenu` (e.g., mouse right-click) events.
@@ -174,7 +173,6 @@ export function appendSaveAsDialog(index: number, output: string) {
         document.body.addEventListener('mousedown', closeMenu, false);
         evt.preventDefault();
     }
-
 
     const firstChild = presumedDiv.childNodes[0];
     assert_for_review(
