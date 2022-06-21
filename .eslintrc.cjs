@@ -78,7 +78,7 @@ module.exports = {
         'parse-config.ts',
         'gen-brick.ts',
         'find-lane-markers.ts',
-        'eva.ts',
+        'eva.ts',                    // Security risk via use of 'eval'?
         'arcs.new.ts',               // Dead code?
         'arcs.ts',                   // Dead code?
         'append-save-as-dialog.ts',
