@@ -125,8 +125,8 @@ export function appendSaveAsDialog(index: number, output: string) {
 
     const firstChild = presumedDiv.childNodes[0];
     assert_for_review(
-        firstChild instanceof HTMLElement,
-        "div.childNodes[0] expected to be instance of HTMLElement, was ${firstChild.nodeName}"
+        firstChild instanceof SVGElement,
+        "div.childNodes[0] expected to be instance of EventTarget, was ${firstChild.nodeName}"
         );
     firstChild.addEventListener('contextmenu', contextMenuHandler, false);
 }
