@@ -1,5 +1,5 @@
 
-import { assert_unreachable } from './assert';
+import { assert_unreachable, warn_unless } from './assert';
 
 export type ArcShapeResult = {
     lx    : number;
@@ -19,13 +19,10 @@ export const SupportedArcShapeStrings = [
     '-~'    ,  '-~>'   ,  '<-~>'  ,   // missing            '<-~'
     '+'     ,
 ] as const;
-export type SupportedArcShape = typeof SupportedArcShapeStrings[number]; // [number] is required here
-export function isSupportedArcShape(shape : unknown) : shape is SupportedArcShape {
+export type SupportedArcShapes = typeof SupportedArcShapeStrings[number]; // [number] is required here
+export function isSupportedArcShape(shape : unknown) : shape is SupportedArcShapes {
     if (typeof(shape) !== 'string') { return false; }
-    for (const chk in SupportedArcShapeStrings) {
-        if (chk === shape) { return true; }
-    }
-    return false;
+    return SupportedArcShapeStrings.some(p => p === shape);
 }
 export interface arc_point {
     x : number;
@@ -35,7 +32,7 @@ export interface arc_point {
 
 
 /* eslint complexity: [warn, 32] */
-export function arcShape (shape : SupportedArcShape | string, from: arc_point, to: arc_point, label? : string) : ArcShapeResult {
+export function arcShape (shape : SupportedArcShapes | string, from: arc_point, to: arc_point, label? : string) : ArcShapeResult {
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     let   lx = ((from.x + to.x) / 2); // lx is changed in some cases, when there is a label
@@ -52,6 +49,7 @@ export function arcShape (shape : SupportedArcShape | string, from: arc_point, t
         // see assert_unreachable() in default case, below
         // Note the default stroke is bright red, so it's at least
         // visually obvious in the resulting graph.
+        warn_unless(false, "Unsupported arc shape: ${shape}");
         style = ('fill:none;stroke:#F00;stroke-width:1');        
 
     } else {
@@ -160,7 +158,7 @@ export function arcShape (shape : SupportedArcShape | string, from: arc_point, t
         default: {
             assert_unreachable(shape);
             break;
-        } // ensure all SupportedArcShape values are individually handled above
+        } // ensures all SupportedArcShapes values are individually handled above
         } // end switch(shape)
     } // endif
     return {
