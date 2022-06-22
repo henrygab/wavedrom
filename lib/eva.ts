@@ -184,9 +184,9 @@ export function eva (id : string) : object {
     const failure1 = originalValidation(source);
     const failure2 = newValidation(source);
     if (null !== failure1) {
-        warn_unless(null === failure2, "New validation too lenient");
+        warn_unless(null !== failure2, "New validation too lenient");
     } else {
-        warn_unless(null !== failure2, "New validation too strict");
+        warn_unless(null === failure2, "New validation too strict");
     }
 
     if (failure1 !== null) {
