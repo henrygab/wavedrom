@@ -1,5 +1,5 @@
 
-import w3 = require('./w3.js');
+var w3 = require('./w3.js');
 
 function insertSVGTemplate (
     index : number,

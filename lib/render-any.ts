@@ -1,6 +1,6 @@
 
-import renderAssign = require('logidrom/lib/render-assign.js');
-import renderReg = require('./render-reg.js');
+var renderAssign = require('logidrom/lib/render-assign.js');
+var renderReg = require('./render-reg.js');
 
 import { renderSignal } from './render-signal.js';
 

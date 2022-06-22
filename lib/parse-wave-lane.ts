@@ -1,7 +1,7 @@
 
-import genFirstWaveBrick = require('./gen-first-wave-brick.js');
-import genWaveBrick = require('./gen-wave-brick.js');
-import findLaneMarkers = require('./find-lane-markers.js');
+var genFirstWaveBrick = require('./gen-first-wave-brick.js');
+var genWaveBrick = require('./gen-wave-brick.js');
+var findLaneMarkers = require('./find-lane-markers.js');
 
 // src is the wave member of the signal object
 // extra = hscale-1 ( padding )

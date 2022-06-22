@@ -11,8 +11,6 @@
         // "moduleResolution": "Node",
         "alwaysStrict": true,
         "allowJs": true,
-        "resolveJsonModule": true,  // allows import of JSON files as though it were a module
-        
         //"noImplicitAny":                true,  // forces things to be typed
 
         "strict": true, // enables wide range of type-checking behavior

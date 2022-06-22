@@ -1,8 +1,8 @@
 
-import  tspan = require('tspan');
-import  textWidth = require('./text-width.js');
-import  findLaneMarkers = require('./find-lane-markers.js');
-import  renderOverUnder = require('./render-over-under.js');
+var tspan = require('tspan');
+var textWidth = require('./text-width.js');
+var findLaneMarkers = require('./find-lane-markers.js');
+var renderOverUnder = require('./render-over-under.js');
 
 function renderLaneUses (cont, lane) {
     var res = [];

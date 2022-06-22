@@ -1,7 +1,7 @@
 /* eslint-env browser */
 
-import onmlStringify = require('onml/stringify.js');
-import w3 = require('./w3.js');
+var onmlStringify = require('onml/stringify.js');
+var w3 = require('./w3.js');
 
 function createElement (arr) {
     arr[1].xmlns = w3.svg;

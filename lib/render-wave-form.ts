@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-import renderWaveElement = require('./render-wave-element.js');
+var renderWaveElement = require('./render-wave-element.js');
 
 function renderWaveForm (index, source, output, notFirstSignal) {
     renderWaveElement(index, source, document.getElementById(output + index), window.WaveSkin, notFirstSignal);

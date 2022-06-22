@@ -1,12 +1,13 @@
 
-import  rec               = require('./rec.js');
-import  laneFromImport    = require('./lane.js');
-import  parseConfig       = require('./parse-config.js');
-import  parseWaveLanes    = require('./parse-wave-lanes.js');
-import  renderGroups      = require('./render-groups.js');
-import  renderLanes       = require('./render-lanes.js');
-import  renderWaveLane    = require('./render-wave-lane.js');
-import  insertSVGTemplate = require('./insert-svg-template.js');
+var rec = require('./rec.js');
+var laneFromImport = require('./lane.js');
+var parseConfig = require('./parse-config.js');
+var parseWaveLanes = require('./parse-wave-lanes.js');
+var renderGroups = require('./render-groups.js');
+var renderLanes = require('./render-lanes.js');
+var renderWaveLane = require('./render-wave-lane.js');
+
+var insertSVGTemplate = require('./insert-svg-template.js');
 
 function laneParamsFromSkin (index : number, source, lane, waveSkin) {
 
@@ -40,7 +41,7 @@ export function renderSignal (index : number, source, waveSkin, notFirstSignal :
 
     laneParamsFromSkin (index, source, laneFromImport, waveSkin);
 
-    // ParseConfig() might modify both source and laneFromImport...
+    // ParseConfig() might modify both source and lane...
     parseConfig(source, laneFromImport);
     var ret = rec(source.signal, {'x':0, 'y':0, 'xmax':0, 'width':[], 'lanes':[], 'groups':[]});
     var content = parseWaveLanes(ret.lanes, laneFromImport);

@@ -1,6 +1,6 @@
 
-import arcShape = require('./arc-shape.js');
-import renderLabel = require('./render-label.js');
+var arcShape = require('./arc-shape.js');
+var renderLabel = require('./render-label.js');
 
 function renderArc (Edge, from, to, shapeProps) {
     return ['path', {

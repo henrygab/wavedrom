@@ -1,5 +1,5 @@
 
-import tspan = require('tspan');
+var tspan = require('tspan');
 
 function renderGroups (groups, index, lane) {
     var x, y, res = ['g'], ts;

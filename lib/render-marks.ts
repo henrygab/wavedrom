@@ -1,5 +1,5 @@
 
-import tspan = require('tspan');
+var tspan = require('tspan');
 
 function captext (cxt, anchor, y) {
     if (cxt[anchor] && cxt[anchor].text) {
