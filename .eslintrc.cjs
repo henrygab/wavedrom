@@ -96,7 +96,6 @@ module.exports = {
     },
     { // BUGBUG -- list of files that are in process of being converted to typescript:
       files: [
-        'append-save-as-dialog.ts',
         'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts',
       ],
       rules: {
@@ -115,6 +114,7 @@ module.exports = {
     { // BUGBUG -- list of files that are building (mostly) as typescript:
       //           exceptions use of `eslint-disable` comments...
       files: [
+        'append-save-as-dialog.ts',
         'arc-shape.ts',
         'eva.ts',                    // Security risk via use of 'eval'?
         'lane.ts',

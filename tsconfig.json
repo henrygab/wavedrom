@@ -8,7 +8,7 @@
         // "rootDir": "lib",
         "sourceMap": true,
         "jsx" : "react",
-        // "moduleResolution": "Node",
+        "moduleResolution": "Node",
         "alwaysStrict": true,
         "allowJs": true,
         //"noImplicitAny":                true,  // forces things to be typed
