@@ -3,8 +3,8 @@ import { assert, assert_for_review } from "./assert";
 
 /* eslint-env browser */
 
-// BUGBUG -- what is the magic number 166?
-const MAGIC_NUMBER_166 = 166;
+// BUGBUG -- what is the magic number?
+const MAGIC_SVG_OFFSET_NUMBER = 191;
 
 // `appendSaveAsDialog(index, output)` simply adds an event listener
 // that adds a popup menu, and clears when clicked on (or click outside of)
@@ -54,13 +54,13 @@ export function appendSaveAsDialog(index: number, output: string) {
             // the SVG data is fully self-contained.
             const firstDiv = document.getElementById(output + '0');
             assert_for_review(firstDiv !== null, 'Code presumes element with id "${output}0" exists');
-            html += firstDiv.innerHTML.substring(MAGIC_NUMBER_166, firstDiv.innerHTML.indexOf('<g id="waves_0">'));
+            html += firstDiv.innerHTML.substring(MAGIC_SVG_OFFSET_NUMBER, firstDiv.innerHTML.indexOf('<g id="waves_0">'));
         }
         assert_for_review(presumedDiv !== null);
         html = [
-            presumedDiv.innerHTML.slice(0, MAGIC_NUMBER_166),
+            presumedDiv.innerHTML.slice(0, MAGIC_SVG_OFFSET_NUMBER),
             html, // when not index 0, this includes items from first WaveDrom segment
-            presumedDiv.innerHTML.slice(MAGIC_NUMBER_166)]
+            presumedDiv.innerHTML.slice(MAGIC_SVG_OFFSET_NUMBER)]
             .join('');
         return 'data:image/svg+xml;base64,' + btoa(html);
     }

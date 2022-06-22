@@ -75,12 +75,10 @@ module.exports = {
       files: [
         'render-over-under.ts',
         'render-gaps.ts',
-        'parse-config.ts',
         'gen-brick.ts',
         'find-lane-markers.ts',
         'arcs.new.ts',               // Dead code?
         'arcs.ts',                   // Dead code?
-        'append-save-as-dialog.ts',
       ],
       rules: {
         'no-undef': 'off',
@@ -97,7 +95,8 @@ module.exports = {
     },
     { // BUGBUG -- list of files that are in process of being converted to typescript:
       files: [
-        'eva.ts',                    // Security risk via use of 'eval'?
+        'append-save-as-dialog.ts',
+        'parse-config.ts',
         'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts',
       ],
       rules: {
@@ -117,6 +116,7 @@ module.exports = {
       //           exceptions use of `eslint-disable` comments...
       files: [
         'arc-shape.ts',
+        'eva.ts',                    // Security risk via use of 'eval'?
         'lane.ts',
       ],
       rules: {
