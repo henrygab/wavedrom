@@ -4,8 +4,8 @@ import { assert_unreachable } from './assert';
 export type ArcShapeResult = {
     lx    : number;
     ly    : number;
-    d     : string | undefined; // can this be more specific?
-    style : string | undefined;
+    d     : string | null; // can this be more specific?
+    style : string | null;
 };
 
 // Define all the valid arc shapes
@@ -41,8 +41,8 @@ export function arcShape (shape : SupportedArcShape | string, from: arc_point, t
     let   lx = ((from.x + to.x) / 2); // lx is changed in some cases, when there is a label
     const ly = ((from.y + to.y) / 2);
     
-    let d     : string | undefined = undefined; // line definition
-    let style : string | undefined = undefined; // style (start & end shapes)
+    let d     : string | null = null; // line definition
+    let style : string | null = null; // style (start & end shapes)
 
     if (!isSupportedArcShape(shape)) {
 
@@ -50,6 +50,8 @@ export function arcShape (shape : SupportedArcShape | string, from: arc_point, t
         // Using this type guard function allows the else block to be
         // validated by the compiler to cover every supported arch shape.
         // see assert_unreachable() in default case, below
+        // Note the default stroke is bright red, so it's at least
+        // visually obvious in the resulting graph.
         style = ('fill:none;stroke:#F00;stroke-width:1');        
 
     } else {

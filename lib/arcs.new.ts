@@ -1,5 +1,8 @@
 // THIS APPEARS TO BE DEAD CODE ... see arc-shapes.ts
 
+import { SupportedArcShapeStrings, isSupportedArcShape } from './arc-shape';
+import { assert } from './assert';
+
 var to;
 var from;
 // var lx,
@@ -151,6 +154,16 @@ export function arc (str : string, ifrom, ito) {
     var target = arcs[str] || arcs['->'];
     return target();
 }
+
+// ensure all arcs are in both files
+for ( const chk in arcs ) {
+    assert( isSupportedArcShape(chk), "ARC defined in arcs.ts fails isSupportedArcShape()" );
+    assert( SupportedArcShapeStrings.some( (p : string) => p === chk ), "ARC defined in arcs.ts does not exist in SupportedArcShapeStrings (see arc-shape.ts)");
+}
+for ( const chk in SupportedArcShapeStrings ) {
+    assert( Object.keys(arcs).some( (p : string) => p === chk), "ARC defined in arc-shape.ts is not reflected in arcs.ts");
+}
+
 
 /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = arc;
