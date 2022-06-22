@@ -30,6 +30,7 @@ module.exports = {
     },
     { // BUGBUG -- list of .ts files that have NOT been fully converted to typescript:
       files: [
+        'parse-config.ts', // LOTS of any/var usage... defer until later...
         'assert.ts',
         'create-element.ts',
         'editor-refresh.ts',
@@ -96,7 +97,6 @@ module.exports = {
     { // BUGBUG -- list of files that are in process of being converted to typescript:
       files: [
         'append-save-as-dialog.ts',
-        'parse-config.ts',
         'this_file_does_not_exist_but_avoids_eslint_complaining_about_empty_list.ts',
       ],
       rules: {
