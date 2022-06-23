@@ -5,12 +5,48 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto|Droid+Sans+Mono|Varela+Round' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+    <div>
+        <P/>
+        The purpose of this file is to generate a static, JSON representation of the
+        width of characters for a specific font when embedded in an SVG file.
+        It does this by adding a tiny SVG file, with a single &lt;text&gt; element
+        having the identifier `char`.
+        <P/>
+        The script then loops through the first 512 character codes:
+        1. Sets `char.innerHTML` to have that single character.
+        2. Gets the width of the character via `char.getBBox().width`.
+        3. Stores the width into an array (even if it's zero).
+        <P/>
+        After the first 512 characters, an "other" value is generated,
+        representing an average of the first (non-zero) 512 characters.
+        <P/>
+        This "other" value is intended as a <B><I>compromise</I></B>
+        between generated table size and accuracy of width for strings.
+        In particular, it's 100% accurate for strings containing only
+        unicode codepoints less than 512 (which includes all ASCII).
+        The use of "other" provides reasonable estimates for most other
+        strings.
+        <P/>
+        The resulting JSON can be directly inserted into the top of the
+        file, "text-width.ts".
+        <P/>
+    </div>
+
 <script>
 (function () {
-    var div = document.createElement('div');
+    let div = document.createElement('div');
     div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="1000" width="1000" viewBox="0 0 1000 1000"><g><text id="char">a</text></g></svg>';
     document.body.appendChild(div);
+    div.style.height = "100px";
+    div.style.width  = "100%";
+    div.style.background = "#777";
 
+    let div2 = document.createElement('div');
+    let pre = document.createElement('pre');
+    document.body.appendChild(div2);
+
+ 
     var char, res, i;
     res = [];
     char = document.getElementById('char');
@@ -37,7 +73,15 @@
     );
     // console.log(JSON.stringify(res));
     // console.log(stat.max, stat.sum / stat.count, (stat.max + stat.sum / stat.count) / 2);
-    console.log(JSON.stringify({ chars: res, other: Math.round((stat.max + stat.sum / stat.count) / 1.8) }));
+    const table = { chars: res, other: Math.round((stat.max + stat.sum / stat.count) / 1.8) };
+    const tableJson = JSON.stringify(table);
+    console.log(tableJson);
+
+    pre.innerText = 'const charWidth = ' + tableJson;
+    div2.appendChild(pre);
+    
+
+
 })();
 </script>
 </body>
