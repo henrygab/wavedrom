@@ -14,6 +14,7 @@
         //"noImplicitAny":                true,  // forces things to be typed
 
         "strict": true, // enables wide range of type-checking behavior
+        "types" : [ "node" ],
         //"strictBindCallApply":          true,  // already enabled with "strict":true
         //"strictFunctionTypes":          true,  // already enabled with "strict":true
         //"strictNullChecks":             true,  // already enabled with "strict":true
