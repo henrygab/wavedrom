@@ -36,6 +36,7 @@
     "unpkg.min": "terser --compress --mengle -- wavedrom.unpkg.js | node ./bin/header.js > wavedrom.unpkg.min.js",
     "cli": "{ echo '#!/usr/bin/env node' ; browserify --node bin/cli.js ; } > bin/wavedrom.js ; chmod +x bin/wavedrom.js",
     "prepare": "npm-run-all test dist dist.min unpkg unpkg.min",
+    "dist.all": "npm-run-all dist dist.min unpkg unpkg.min",
     "coverage": "nyc report -r=text-lcov | coveralls",
     "clean": "rm -rf wavedrom.js wavedrom.*.js coverage .nyc_output",
     "skins": "for S in default narrow dark lowkey ; do node bin/svg2js.js -i unpacked/skins/$S.svg > skins/$S.js ; done"
