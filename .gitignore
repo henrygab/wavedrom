@@ -25,14 +25,15 @@ wavedrom.unpkg.min.js
 /TODO.txt
 
 # Temporarily adding files here as they are converted to TypeScript
+/lib/archive/arcs.js
+/lib/archive/arcs.js.map
+/lib/archive/arcs.new.js
+/lib/archive/arcs.new.js.map
+
 /lib/append-save-as-dialog.js
 /lib/append-save-as-dialog.js.map
 /lib/arc-shape.js
 /lib/arc-shape.js.map
-/lib/arcs.js
-/lib/arcs.js.map
-/lib/arcs.new.js
-/lib/arcs.new.js.map
 /lib/assert.js
 /lib/assert.js.map
 /lib/create-element.js
