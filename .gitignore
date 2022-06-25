@@ -7,17 +7,15 @@ build
 
 # this is where Typescript will generate the compiled JavaScript files
 /dist
-
-wavedrom.js
-wavedrom.min.js
-wavedrom.unpkg.js
-wavedrom.unpkg.min.js
+# GOAL - Move these generated files to /dist
+/wavedrom.js
+/wavedrom.min.js
+/wavedrom.unpkg.js
+/wavedrom.unpkg.min.js
 /wavedrom2.js
 /wavedrom2.min.js
 /wavedrom2.unpkg.js
 /wavedrom2.unpkg.min.js
-
-# GOAL - Move these generated files to /dist
 *.d.ts
 *.d.ts.map
 
