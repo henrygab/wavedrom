@@ -131,6 +131,5 @@ export function appendSaveAsDialog(index: number, output: string) {
     firstChild.addEventListener('contextmenu', contextMenuHandler, false);
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = appendSaveAsDialog;
-
+module.exports.appendSaveAsDialog = appendSaveAsDialog;

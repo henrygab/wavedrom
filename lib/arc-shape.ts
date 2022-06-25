@@ -1,4 +1,5 @@
 
+import { arcs } from './archive/arcs';
 import { assert_unreachable, warn_unless } from './assert';
 
 export type ArcShapeResult = {
@@ -169,5 +170,5 @@ export function arcShape (shape : SupportedArcShapes | string, from: arc_point, 
     };
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = arcShape;
+module.exports.arcShape = arcShape;

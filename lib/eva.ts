@@ -199,4 +199,4 @@ export function eva (id : string) : object {
 
 /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = eva;
-
+module.exports.eva = eva;

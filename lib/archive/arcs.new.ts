@@ -165,5 +165,5 @@ for ( const chk in SupportedArcShapeStrings ) {
 }
 
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = arc;
+module.exports.arc = arc;

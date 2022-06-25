@@ -33,5 +33,5 @@ function genFirstWaveBrick (text, extra, times) {
     return tmp;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = genFirstWaveBrick;
+module.exports.genFirstWaveBrick = genFirstWaveBrick;
