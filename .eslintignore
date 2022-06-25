@@ -13,6 +13,7 @@ wavedrom.unpkg.min.js
 
 /skins/*
 /test/*
+/dist/*
 
 /lib/archive/arcs.js
 /lib/archive/arcs.js.map
