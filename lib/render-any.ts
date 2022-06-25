@@ -19,3 +19,5 @@ function renderAny (index, source, waveSkin, notFirstSignal) {
 
 /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderAny;
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
+module.exports.renderAny = renderAny;
