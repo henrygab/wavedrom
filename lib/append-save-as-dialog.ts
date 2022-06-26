@@ -130,6 +130,3 @@ export function appendSaveAsDialog(index: number, output: string) {
         );
     firstChild.addEventListener('contextmenu', contextMenuHandler, false);
 }
-
-module.exports = appendSaveAsDialog;
-module.exports.appendSaveAsDialog = appendSaveAsDialog;

@@ -1,7 +1,7 @@
 /* eslint-env browser */
 
 var eva = require('./eva.js');
-var appendSaveAsDialog = require('./append-save-as-dialog.js');
+import { appendSaveAsDialog } from './append-save-as-dialog';
 var renderWaveForm = require('./render-wave-form.js');
 
 function processAll () {
