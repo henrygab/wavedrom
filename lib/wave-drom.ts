@@ -1,3 +1,14 @@
+
+// the combination of `export{};` *AND*  the `declare global {}` block
+// appear to enable the `window.WaveDrom` style of augmenting `window`.
+
+export {};
+declare global {
+    interface Window {
+        WaveDrom? : any; // TODO: Define the object type!
+    }
+}
+
 window.WaveDrom = window.WaveDrom || {};
 
 var pkg = require('../../package.json');

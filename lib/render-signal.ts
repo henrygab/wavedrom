@@ -41,7 +41,7 @@ export function renderSignal (index : number, source, waveSkin, notFirstSignal :
 
     laneParamsFromSkin (index, source, laneFromImport, waveSkin);
 
-    // ParseConfig() might modify both source and lane...
+    // ParseConfig() might modify both source and laneFromImport...
     parseConfig(source, laneFromImport);
     var ret = rec(source.signal, {'x':0, 'y':0, 'xmax':0, 'width':[], 'lanes':[], 'groups':[]});
     var content = parseWaveLanes(ret.lanes, laneFromImport);
@@ -58,6 +58,7 @@ export function renderSignal (index : number, source, waveSkin, notFirstSignal :
 
     laneFromImport.xg = Math.ceil((xmax - laneFromImport.tgo) / laneFromImport.xs) * laneFromImport.xs;
 
+    // TODO: Update renderLanes(): `ret` type should match return type of rec()
     const tmp = renderLanes(index, content, waveLanes, ret, source, laneFromImport);
     return insertSVGTemplate(
         index, source, laneFromImport, waveSkin, content,
