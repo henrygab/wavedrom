@@ -3,71 +3,8 @@
 import { assert, assert_for_review, warn_unless } from './assert';
 
 
-//import * as G from './typeguard';
+import * as G from './typeguard';
 // eslint-disable-next-line @typescript-eslint/no-namespace
-namespace G {
-// See: https://stackoverflow.com/a/72668047/6471040
-// See: https://stackoverflow.com/a/59483318/6471040
-// (CC BY-SA 4.0 ... https://creativecommons.org/licenses/by-sa/4.0/)
-// 
-// Guard<T> is used below to ensure, when an object has a property,
-//          that the type of the property is of type 'T'
-//
-export type Guard<T> = (x: unknown) => x is T;
-// Guarded<T> is never used??
-export type Guarded<T extends Guard<unknown>> = T extends Guard<infer V> ? V : never;
-// primitiveGuard provides a wrapper for gString, gNumber, gBoolean
-const primitiveGuard = <T>(typeOf: string) => (x: unknown): x is T => typeof x === typeOf;
-export const gString = primitiveGuard<string>("string");
-export const gNumber = primitiveGuard<number>("number");
-export const gBoolean = primitiveGuard<boolean>("boolean");
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const gNull = (x: any): x is null => x === null;
-// gObject<T> 
-export const gObject = <T extends object>(
-    // propGuardObj has literal strings matching T's properties
-    // Each of which has the same type as the defined property.
-    // in other words, magical generics to setup a type-safe
-    // dummy object to compare against....
-    propGuardObj: { [K in keyof T]: Guard<T[K]> }
-) =>
-    // the actual function takes 'x' as type 'any'
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (x: any): x is T => (
-        // must be an object (and not null)
-        typeof x === "object" && x !== null &&
-        // for each of the keys (properties) of the dummy object
-        (Object.keys(propGuardObj) as Array<keyof T>)
-            // key must be in object, AND be of matching type
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            .every( k => (k in x) && propGuardObj[k](x[k]) )
-        );
-export const gPartial = <T extends object>(
-        propGuardObj: { [K in keyof T]: Guard<T[K]> }
-) =>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (x: any): x is { [K in keyof T]? : T[K] } => (
-        typeof x === "object" &&
-        x !== null &&
-        (Object.keys(propGuardObj) as Array<keyof T>)
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            .every( k => !(k in x) || typeof x[k] === "undefined" || propGuardObj[k](x[k]) )
-    );
-
-export const gArray =
-    <T>(elemGuard: Guard<T>) => (x: unknown): x is Array<T> => (
-        Array.isArray(x) &&
-        x.every(el => elemGuard(el))
-    );
-export const gUnion = <T, U>(tGuard: Guard<T>, uGuard: Guard<U>) =>
-    (x: unknown): x is T | U =>
-        tGuard(x) || uGuard(x);
-
-export const gIntersection = <T, U>(tGuard: Guard<T>, uGuard: Guard<U>) =>
-    (x: unknown): x is T & U =>
-        tGuard(x) && uGuard(x);
-
-}
 
 
 // Using typeguard helpers, define each type, so it's available at runtime
