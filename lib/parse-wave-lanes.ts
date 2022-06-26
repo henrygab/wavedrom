@@ -50,5 +50,5 @@ function parseWaveLanes (sig, lane) {
     return content;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = parseWaveLanes;
+module.exports.parseWaveLanes = parseWaveLanes;

@@ -113,5 +113,5 @@ function renderMarks (content, index, lane, source) {
         .concat(ticktock(lane, 'foot', 'tock', mmstep / 2, mmstep, gy + 15, marks));
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderMarks;
+module.exports.renderMarks = renderMarks;

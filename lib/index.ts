@@ -1,5 +1,5 @@
 
-var pkg = require('../package.json');
+var pkg = require('../../package.json');
 var processAll = require('./process-all.js');
 var eva = require('./eva.js');
 var renderWaveForm = require('./render-wave-form.js');

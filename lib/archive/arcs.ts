@@ -1,7 +1,9 @@
-// THIS APPEARS TO BE DEAD CODE ... see arc-shapes.ts
 
-import { SupportedArcShapeStrings, isSupportedArcShape } from './arc-shape';
-import { assert } from './assert';
+// THIS APPEARS TO BE DEAD CODE ... see arc-shapes.ts
+// @ts-nocheck
+
+import { SupportedArcShapeStrings, isSupportedArcShape } from '../arc-shape';
+import { assert } from '../assert';
 
 // Where are dx, dy defined to have value?
 // Is this entire file simply here to define a bunch of closures, keyed by SupportedArcShape string?

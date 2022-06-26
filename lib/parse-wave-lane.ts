@@ -65,5 +65,5 @@ function parseWaveLane (src, extra, lane) {
     return [R, num_unseen_markers];
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = parseWaveLane;
+module.exports.parseWaveLane = parseWaveLane;

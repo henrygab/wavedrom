@@ -81,5 +81,5 @@ function renderArcs (source, index, top, lane) {
     return res;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderArcs;
+module.exports.renderArcs = renderArcs;

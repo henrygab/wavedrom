@@ -121,5 +121,5 @@ function parseConfig (source: ParseConfigSource, lane: ParseConfigLane ) {
     }
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = parseConfig;
+module.exports.parseConfig = parseConfig;

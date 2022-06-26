@@ -1,7 +1,7 @@
 'use strict';
 
-var renderAny = require('../lib/render-any.js');
-var waveSkin = require('../skins/default.js');
+var renderAny = require('../dist/lib/render-any.js');
+var waveSkin = require('../dist/skins/default.js');
 var chai = require('chai');
 var expect = chai.expect;
 

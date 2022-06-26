@@ -83,5 +83,5 @@ function renderWaveLane (content, index, lane) {
     return {glengths: glengths, res: res};
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderWaveLane;
+module.exports.renderWaveLane  = renderWaveLane;

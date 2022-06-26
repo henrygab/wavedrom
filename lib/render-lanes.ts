@@ -16,5 +16,5 @@ function renderLanes (index, content, waveLanes, ret, source, lane) {
         );
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderLanes;
+module.exports.renderLanes = renderLanes;

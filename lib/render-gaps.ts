@@ -51,5 +51,5 @@ function renderGaps (source, index, lane) {
     return ['g', {id: 'wavegaps_' + index}].concat(res);
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderGaps;
+module.exports.renderGaps = renderGaps;

@@ -62,5 +62,5 @@ function renderPieceWise (lanes, index, cfg) {
     return res;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = renderPieceWise;
+module.exports.renderPieceWise = renderPieceWise;

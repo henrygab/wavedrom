@@ -28,5 +28,5 @@ function rec (tmp, state) {
     return state;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = rec;
+module.exports.rec  = rec;

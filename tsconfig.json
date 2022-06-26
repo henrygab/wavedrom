@@ -4,26 +4,22 @@
 
     "compilerOptions": {
         "module": "CommonJS",
-        // "outDir": "out",
+        "outDir": "dist",
         // "rootDir": "lib",
         "sourceMap": true,
         "jsx" : "react",
         "moduleResolution": "Node",
         "alwaysStrict": true,
         "allowJs": true,
-        //"noImplicitAny":                true,  // forces things to be typed
+        "noImplicitAny": false,  // BUGBUG - goal is to enable this ... forces all variables to be typed
 
         "strict": true, // enables wide range of type-checking behavior
         "types" : [ "node" ],
-        //"strictBindCallApply":          true,  // already enabled with "strict":true
-        //"strictFunctionTypes":          true,  // already enabled with "strict":true
-        //"strictNullChecks":             true,  // already enabled with "strict":true
-        //"strictPropertyInitialization": true,  // already enabled with "strict":true
 
         // "esModuleInterop": true,
         // "skipLibCheck": true,
-        // "declaration": true, // generate .d.ts files
-        // "declarationMap": true, // map .d.ts declarations back to source
+        "declaration": true, // generate .d.ts files
+        "declarationMap": true, // map .d.ts declarations back to source
         // "forceConsistentCasingInFileNames": true,
 
         // Do not set the following three, for consistency with Node.js module resolution
@@ -33,7 +29,15 @@
     },
 
     "exclude": [
+        // "bin",
+        // "coverage",
+        // "skins",
+        // "test",
+        "lib/archive",
+        "dist/*",
+        "dist/**/*",
         "node_modules",
+        // "wavedrom*.js" // generated files in project root...
     ]
 
 }

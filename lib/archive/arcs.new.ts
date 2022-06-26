@@ -1,7 +1,8 @@
 // THIS APPEARS TO BE DEAD CODE ... see arc-shapes.ts
+// @ts-nocheck 
 
-import { SupportedArcShapeStrings, isSupportedArcShape } from './arc-shape';
-import { assert } from './assert';
+import { SupportedArcShapeStrings, isSupportedArcShape } from '../arc-shape';
+import { assert } from '../assert';
 
 var to;
 var from;

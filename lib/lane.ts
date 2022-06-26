@@ -1,4 +1,5 @@
 
+// BUGBUG -- this appears to be a GLOBAL variable, not an object generator.
 const lane = {
     xs     : 20,    // tmpgraphlane0.width
     ys     : 20,    // tmpgraphlane0.height
@@ -19,5 +20,5 @@ const lane = {
     foot   : {}
 };
 
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 module.exports = lane;
+module.exports.lane = lane;
