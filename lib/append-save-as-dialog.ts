@@ -6,6 +6,8 @@ import { assert, assert_for_review } from "./assert";
 // BUGBUG -- what is the magic number?
 const MAGIC_SVG_OFFSET_NUMBER = 191;
 
+export default appendSaveAsDialog;
+
 // `appendSaveAsDialog(index, output)` simply adds an event listener
 // that adds a popup menu, and clears when clicked on (or click outside of)
 export function appendSaveAsDialog(index: number, output: string) {
@@ -104,8 +106,8 @@ export function appendSaveAsDialog(index: number, output: string) {
     const contextMenuHandler = (evt : MouseEvent) => {
         menu = document.createElement('div');
         menu.className    = 'wavedromMenu';
-        menu.style.top    = evt.x.toString() + 'px';
-        menu.style.left   = evt.y.toString() + 'px';
+        menu.style.top    = evt.y.toString() + 'px';
+        menu.style.left   = evt.x.toString() + 'px';
         const list        = document.createElement('ul');
         const savePNG     = document.createElement('li');
         const saveSVG     = document.createElement('li');
@@ -130,3 +132,4 @@ export function appendSaveAsDialog(index: number, output: string) {
         );
     firstChild.addEventListener('contextmenu', contextMenuHandler, false);
 }
+
