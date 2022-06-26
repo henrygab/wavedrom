@@ -2,7 +2,7 @@
 var tspan = require('tspan');
 var textWidth = require('./text-width.js');
 
-function renderLabel (p, text) {
+export function renderLabel (p, text) {
     var w = textWidth(text, 8) + 2;
     return ['g', {
         transform:'translate(' + p.x + ',' + p.y + ')'
