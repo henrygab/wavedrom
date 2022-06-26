@@ -1,5 +1,4 @@
 
-import { arcs } from './archive/arcs';
 import { assert_unreachable, warn_unless } from './assert';
 
 export type ArcShapeResult = {

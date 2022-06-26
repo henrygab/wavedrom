@@ -1,5 +1,5 @@
 
-var parseWaveLane = require('./parse-wave-lane.js');
+import { parseWaveLane } from './parse-wave-lane';
 
 function data_extract (e, num_unseen_markers) {
     var ret_data;

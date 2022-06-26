@@ -1,5 +1,5 @@
 
-import { genBrick } from './gen-brick.js';
+import { genBrick } from './gen-brick';
 
 // TODO: this appears to (accidentally) define the list of allowed characters
 //       in a signal.  It would be nice to have more descriptive names
@@ -8,7 +8,7 @@ import { genBrick } from './gen-brick.js';
 //       Instead, define allowed types for keys (and values) in x1..6 and y1..2.
 //       See 'G' namespace that is currently in eva.ts for guard-generation functions.
 
-function genWaveBrick (text : string, extra : number, times : number) : string[] {
+export function genWaveBrick (text : string, extra : number, times : number) : string[] {
     // atext's values (from incoming parameter 'text') are looked up in both x1 and x4
     // the values in x1 correspond to template ids in the skin.js files.
     const x1 : Record<string,string> = {p:'pclk', n:'nclk', P:'Pclk', N:'Nclk', h:'pclk', l:'nclk', H:'Pclk', L:'Nclk'};

@@ -1,7 +1,7 @@
 import { assert_for_review } from "./assert";
 
 // TODO: Decode purpose of function, and how the arguments inter-relate
-function genBrick (texts: string[], extra: number, times: number) {
+export function genBrick (texts: string[], extra: number, times: number) {
 
     const R : string[] = [];
     assert_for_review(texts.length > 0, "If not, then `R.push(texts[0])` below (outside if blocks) would have pushed undefined onto R");
