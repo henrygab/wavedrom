@@ -3,10 +3,10 @@ import { arcs } from './archive/arcs';
 import { assert_unreachable, warn_unless } from './assert';
 
 export type ArcShapeResult = {
-    lx    : number;
-    ly    : number;
-    d     : string | null; // can this be more specific?
-    style : string | null;
+    lx    : number;        // lengthX
+    ly    : number;        // lengthY
+    d     : string | null; // SVG shape string, so not easy to make more specific
+    style : string | null; // SVG shape string, so not easy to make more specific
 };
 
 // Define all the valid arc shapes
@@ -25,7 +25,7 @@ export function isSupportedArcShape(shape : unknown) : shape is SupportedArcShap
     if (typeof(shape) !== 'string') { return false; }
     return SupportedArcShapeStrings.some(p => p === shape);
 }
-export interface arc_point {
+export interface IWaveDromPoint {
     x : number;
     y : number;
 }
@@ -33,7 +33,7 @@ export interface arc_point {
 
 
 /* eslint complexity: [warn, 32] */
-export function arcShape (shape : SupportedArcShapes | string, from: arc_point, to: arc_point, label? : string) : ArcShapeResult {
+export function arcShape (shape : SupportedArcShapes | string, from: IWaveDromPoint, to: IWaveDromPoint, label? : string) : ArcShapeResult {
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     let   lx = ((from.x + to.x) / 2); // lx is changed in some cases, when there is a label

@@ -1,10 +1,11 @@
 
 var genBrick = require('./gen-brick.js');
 
-function genFirstWaveBrick (text, extra, times) {
-    var tmp;
+// TODO: add explicit list of allowed types, so can compile-time
+//       assert that all options have been handled.
 
-    tmp = [];
+function genFirstWaveBrick (text: string, extra: number, times: number) : string[] {
+    let tmp : string[] = [];
     switch (text) {
     case 'p': tmp = genBrick(['pclk', '111', 'nclk', '000'], extra, times); break;
     case 'n': tmp = genBrick(['nclk', '000', 'pclk', '111'], extra, times); break;

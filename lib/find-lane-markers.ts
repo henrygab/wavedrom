@@ -1,10 +1,15 @@
+import { warn_unless } from "./assert";
 
-function findLaneMarkers (lanetext) {
-    var gcount = 0,
-        lcount = 0,
-        ret = [];
+// lanetext is *probably* of type `string[]`
+// better if could explicitly define list of allowed / expected strings
+// what do the 'vvv-N' (where N in [2..9]) actually refer to?
+function findLaneMarkers (lanetext : string[] | any[]) {
+    let gcount = 0;
+    let lcount = 0;
+    const ret : number[] = [];
 
     lanetext.forEach(function (e) {
+        warn_unless(typeof e === 'string', `[TS TYPE]: lanetext parameter of findLaneMarkers was *NOT* string, was ${typeof e}`);
         if (
             (e === 'vvv-2') ||
             (e === 'vvv-3') ||
