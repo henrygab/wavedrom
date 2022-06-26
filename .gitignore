@@ -20,7 +20,7 @@ build
 *.d.ts.map
 
 /test2
-/TODO.txt
+/TODO.*
 
 # Temporarily adding files here as they are converted to TypeScript
 /lib/archive/arcs.js
